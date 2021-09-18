@@ -6,9 +6,11 @@ import { EvidencesComponent } from './tabs/evidences/evidences.component';
 import { SuspectsComponent } from './tabs/suspects/suspects.component';
 import { TheoriesComponent } from './tabs/theories/theories.component';
 import { QuestionsComponent } from './tabs/questions/questions.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes =[
     { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: 'home',             component: HomeComponent },
     { path: 'evidences',        component: EvidencesComponent },
     { path: 'suspects',         component: SuspectsComponent },
     { path: 'theories',         component: TheoriesComponent },
