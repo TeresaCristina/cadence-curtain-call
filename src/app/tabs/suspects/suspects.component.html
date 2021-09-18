@@ -1,0 +1,22 @@
+<div class="wrapper">
+    <div class="page-header page-header-xs" data-parallax="true"></div>
+    <div class="section suspects-content">
+        <div class="owner">
+            <div class="background">
+                <div class="container">
+                    <div class="nav-tabs-navigation">
+                        <div class="nav-tabs-wrapper">
+                            <ngb-tabset [justify]="'center'">
+                                <ngb-tab *ngFor="let suspect of suspects" title={{suspect.name}}>
+                                    <ng-template ngbTabContent>
+                                        <app-suspect-template></app-suspect-template>
+                                    </ng-template>
+                                </ngb-tab>
+                            </ngb-tabset>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

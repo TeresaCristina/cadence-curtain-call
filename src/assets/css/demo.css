@@ -98,7 +98,6 @@
 }
 
 .navigation-example {
-    background-image: url('../img/ilya-yakover.jpg');
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
@@ -773,9 +772,6 @@ pre.prettyprint {
     box-shadow: 0 -3px 8px rgba(0, 0, 0, 0);
 }
 
-.presentation .section-images .card-image .image {
-    /*     border-radius: 6px; */
-}
 
 @media (max-width: 1200px) {
     .presentation .section-images .image img {
@@ -1291,7 +1287,7 @@ pre.prettyprint {
     z-index: 2;
 }
 
-.profile-content {
+.suspects-content {
     padding-top: 0!important;
     position: relative;
     z-index: 2;

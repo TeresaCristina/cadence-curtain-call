@@ -2,20 +2,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
-
-import { ComponentsComponent } from './components/components.component';
-import { ProfileComponent } from './examples/profile/profile.component';
-import { SignupComponent } from './examples/signup/signup.component';
-import { LandingComponent } from './examples/landing/landing.component';
-import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.component';
+import { EvidencesComponent } from './tabs/evidences/evidences.component';
+import { SuspectsComponent } from './tabs/suspects/suspects.component';
+import { TheoriesComponent } from './tabs/theories/theories.component';
+import { QuestionsComponent } from './tabs/questions/questions.component';
 
 const routes: Routes =[
     { path: '', redirectTo: 'home', pathMatch: 'full' },
-    { path: 'home',             component: ComponentsComponent },
-    { path: 'user-profile',     component: ProfileComponent },
-    { path: 'signup',           component: SignupComponent },
-    { path: 'landing',          component: LandingComponent },
-    { path: 'nucleoicons',      component: NucleoiconsComponent }
+    { path: 'evidences',        component: EvidencesComponent },
+    { path: 'suspects',         component: SuspectsComponent },
+    { path: 'theories',         component: TheoriesComponent },
+    { path: 'questions',        component: QuestionsComponent },
 ];
 
 @NgModule({

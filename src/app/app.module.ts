@@ -8,9 +8,7 @@ import { AppRoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
-
-import { ComponentsModule } from './components/components.module';
-import { ExamplesModule } from './examples/examples.module';
+import { TabsModule } from './tabs/tabs.module';
 
 
 @NgModule({
@@ -24,8 +22,7 @@ import { ExamplesModule } from './examples/examples.module';
     NgbModule,
     FormsModule,
     RouterModule,
-    ComponentsModule,
-    ExamplesModule,
+    TabsModule,
     AppRoutingModule,
   ],
   providers: [],
