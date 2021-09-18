@@ -13,7 +13,7 @@ export class SuspectsComponent implements OnInit {
                      {"id": "4", "name": "Suspect 4", "occupation": "template"},
                      {"id": "5", "name": "Suspect 5", "occupation": "template"},
                     ]
-                    currentItem = 'Television';
+  currentItem = 'Television';
   constructor() { }
 
   ngOnInit(): void {
