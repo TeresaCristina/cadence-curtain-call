@@ -7,7 +7,7 @@ app.use(express.static(__dirname + '/dist/paper-kit-2-angular'));
 
 app.get('/*', function(req,res) {
     
-    res.sendFile(path.join(__dirname+'/dist/paper-kit-2-angular/index.html'));
+    res.sendFile(path.join(__dirname+'/paper-kit-2-angular/dist/index.html'));
 });
     
 
