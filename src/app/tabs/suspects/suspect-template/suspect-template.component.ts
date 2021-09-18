@@ -7,8 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SuspectTemplateComponent implements OnInit {
 
-  @Input() suspectId: any;
-
+  @Input() item = '';
+  
   constructor() { }
 
   ngOnInit(): void {
