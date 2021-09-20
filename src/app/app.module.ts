@@ -1,9 +1,18 @@
+declare module "@angular/core" {
+  interface ModuleWithProviders<T = any> {
+    ngModule: Type<T>;
+    providers?: Provider[];
+  }
+}
+
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
+import { VerticalTimelineModule } from 'angular-vertical-timeline';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
@@ -26,6 +35,7 @@ import { HomeComponent } from './home/home.component';
     RouterModule,
     TabsModule,
     AppRoutingModule,
+    VerticalTimelineModule
   ],
   providers: [],
   bootstrap: [AppComponent]

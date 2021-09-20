@@ -10,7 +10,9 @@ import { PictureComponent } from './suspects/suspect-template/picture/picture.co
 import { DescriptionComponent } from './suspects/suspect-template/description/description.component';
 import { ConectionsComponent } from './suspects/suspect-template/conections/conections.component';
 import { TheoriesComponent } from './theories/theories.component';
-import { QuestionsComponent } from './questions/questions.component';
+import { TimelineComponent } from './timeline/timeline.component';
+import { CardTimelineComponent } from './timeline/card-timeline/card-timeline.component';
+
 
 @NgModule({
     imports: [
@@ -27,6 +29,7 @@ import { QuestionsComponent } from './questions/questions.component';
     DescriptionComponent,
     ConectionsComponent,
     TheoriesComponent,
-    QuestionsComponent]
+    TimelineComponent,
+    CardTimelineComponent]
 })
 export class TabsModule { }

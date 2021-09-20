@@ -29,6 +29,7 @@
     "@angular/platform-browser-dynamic": "11.0.4",
     "@angular/router": "11.0.4",
     "@ng-bootstrap/ng-bootstrap": "6.0.0",
+    "angular-vertical-timeline": "^0.6.0",
     "bootstrap": "4.5.3",
     "core-js": "3.8.1",
     "express": "^4.17.1",

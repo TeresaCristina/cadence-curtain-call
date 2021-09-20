@@ -149,9 +149,6 @@
   line-height: 20px;
   text-align: center;
 }
-.footer .heart{
-    color: #EB5E28;
-}
 
 .social-share{
     float: left;
@@ -335,7 +332,7 @@
     transition: all .2s;
 }
 .presentation .section{
-    padding: 100px 0;
+    padding: 0px 0;
 }
 .presentation .colors{
     padding: 100px 0;
@@ -1074,15 +1071,6 @@
     }
 }
 
-/* for components and tutorial page */
-    /*pre.prettyprint{
-        background-color: #FFFCF5;
-        border: 0px;
-        margin-bottom: 0;
-        margin-top: 20px;
-        padding: 20px;
-        text-align: left;
-    }*/
 .atv, .str{
     color: #75c3b6;
 }

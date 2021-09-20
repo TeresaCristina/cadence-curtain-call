@@ -25,7 +25,7 @@ Paper Kit 2 Angular is built on top of Bootstrap 4, so it fully supports it. Mos
 * [Browser Support](#browser-support)
 * [Resources](#resources)
 * [Reporting Issues](#reporting-issues)
-* [Technical Support or Questions](#technical-support-or-questions)
+* [Technical Support or Questions](#technical-support-or-timeline)
 * [Licensing](#licensing)
 * [Useful Links](#useful-links)
 
@@ -202,7 +202,7 @@ We use GitHub Issues as the official bug tracker for the Paper Kit 2 Angular. He
 
 ## Technical Support or Questions
 
-If you have questions or need help integrating the product please [contact us](https://www.creative-tim.com/contact-us) instead of opening an issue.
+If you have timeline or need help integrating the product please [contact us](https://www.creative-tim.com/contact-us) instead of opening an issue.
 
 ## Licensing
 

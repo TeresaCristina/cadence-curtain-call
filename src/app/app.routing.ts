@@ -5,8 +5,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { EvidencesComponent } from './tabs/evidences/evidences.component';
 import { SuspectsComponent } from './tabs/suspects/suspects.component';
 import { TheoriesComponent } from './tabs/theories/theories.component';
-import { QuestionsComponent } from './tabs/questions/questions.component';
+
 import { HomeComponent } from './home/home.component';
+import { TimelineComponent } from './tabs/timeline/timeline.component';
 
 const routes: Routes =[
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -14,7 +15,7 @@ const routes: Routes =[
     { path: 'evidences',        component: EvidencesComponent },
     { path: 'suspects',         component: SuspectsComponent },
     { path: 'theories',         component: TheoriesComponent },
-    { path: 'questions',        component: QuestionsComponent },
+    { path: 'timeline',        component: TimelineComponent },
 ];
 
 @NgModule({

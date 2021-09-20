@@ -402,7 +402,7 @@
 }
 
 .presentation .section {
-    padding: 100px 0;
+    padding: 10px 0;
 }
 
 .presentation .colors {
@@ -1127,7 +1127,7 @@ pre.prettyprint {
 }
 
 .demo-icons section h2 {
-    border-bottom: 1px solid #e2e2e2;
+    border-bottom: 1px solid #c3a8c4;
     padding: 0 0 1em .2em;
     margin-bottom: 1em;
 }

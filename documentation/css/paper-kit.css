@@ -1773,9 +1773,9 @@ textarea.form-control {
 }
 
 .section {
-  padding: 70px 0;
+  padding: 10px 0;
   position: relative;
-  background-color: #FFFFFF;
+  background-color: #c3a8c4;
 }
 
 .section-with-space {
@@ -2727,16 +2727,12 @@ textarea.form-control {
   text-align: center;
 }
 
-.footer .heart {
-  color: #EB5E28;
-}
-
 .footer {
-  background-color: #FFFFFF;
+  background-color: #c3a8c4;
   line-height: 36px;
 }
 .footer.footer-black h4 {
-  color: #FFFFFF;
+  color: #c3a8c4;
 }
 .footer .links {
   display: inline-block;
@@ -5023,7 +5019,7 @@ textarea.form-control {
     -ms-transition: all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
     transition: all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
     left: 0;
-    background-color: white;
+    background-color: #c3a8c4;
   }
 }
 @media screen and (min-width: 767px) {
