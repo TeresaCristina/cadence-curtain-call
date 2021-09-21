@@ -3,13 +3,15 @@
 
 const express = require('express');
 const router = express.Router();
-//const ctrlViewBus = require('../controllers/businessView');
+const timelines = require('./controllers/timelines');
 
 
 // Server Status
 router.get("/status", function (req, res) {
-  //res.status(200).json({ status: "I am alive!" });
+  res.status(200).json({ status: "I am alive!" });
 });
 
-//router.get('/viola-timeline')// ctrlViewBus.getAllBusiness);
+router.get('/viola-timeline', timelines.viola);
+
+
 module.exports = router;
