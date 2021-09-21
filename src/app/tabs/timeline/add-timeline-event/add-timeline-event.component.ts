@@ -1,4 +1,7 @@
+import { Time } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { DataService } from 'services/data/data.service';
 
 @Component({
   selector: 'app-add-timeline-event',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddTimelineEventComponent implements OnInit {
 
-  constructor() { }
+  newEvent: any = {"event":"","time": "", "date": "", "details":""}
+  
+  details: String;
+  time: Time;
+  date: Date;
+  event: String;
 
-  ngOnInit(): void {
+  constructor(private data: DataService) { }
+
+  ngOnInit(): void {}
+
+  addEvent() {
+    this.newEvent["details"] = this.details;
+    this.newEvent["time"] = this.time;
+    this.newEvent["date"] = this.date;
+    this.newEvent["event"] = this.event;
+    console.log(this.newEvent)
+    this.data.newTimelineEvent(this.newEvent);    
   }
-
 }

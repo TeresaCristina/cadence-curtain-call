@@ -11,7 +11,8 @@ router.get("/status", function (req, res) {
   res.status(200).json({ status: "I am alive!" });
 });
 
-router.get('/viola-timeline', timelines.viola);
+router.get('/all-events', timelines.allEvents);
+router.post('/new-event', timelines.newEvent);
 
 
 module.exports = router;

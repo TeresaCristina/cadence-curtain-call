@@ -1,10 +1,14 @@
 const express = require('express');
-
+const cors = require('cors');
 const app = express();
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Headers", "Access-Control-Expose-Headers, Content-Type, Accept");
+  next();
+  });
 
 
 
- 
+  app.use(cors());
   require('./api/database'); 
   const routes = require('./api/index');  
   
@@ -17,7 +21,7 @@ const app = express();
   app.use('/api', routes);  // Routes for our API (this is for the frontend conection)
   
   // Initializes the server
-  const PORT = process.env.PORT ;
+  const PORT = process.env.PORT || 8080 ;
   const server = app.listen(PORT, function (error) {
     if (error) throw error;
     else console.log("Application server now running on port", server.address().port);

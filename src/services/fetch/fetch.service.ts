@@ -13,7 +13,7 @@ export class FetchService {
   constructor(private http: HttpClient, public router: Router) { }
 
   getViolaTimeline() {
-    const api = `${this.endpoint}/viola-timeline`;
+    const api = `${this.endpoint}/all-events`;
     return this.http.get<any>(api)
       .pipe(
         map(
