@@ -12,6 +12,7 @@ import { ConectionsComponent } from './suspects/suspect-template/conections/cone
 import { TheoriesComponent } from './theories/theories.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { CardTimelineComponent } from './timeline/card-timeline/card-timeline.component';
+import { AddTimelineEventComponent } from './timeline/add-timeline-event/add-timeline-event.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { CardTimelineComponent } from './timeline/card-timeline/card-timeline.co
     ConectionsComponent,
     TheoriesComponent,
     TimelineComponent,
-    CardTimelineComponent]
+    CardTimelineComponent,
+    AddTimelineEventComponent]
 })
 export class TabsModule { }

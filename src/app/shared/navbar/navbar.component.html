@@ -1,6 +1,11 @@
 <nav class="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="500">
     <div class="container">
         <div class="navbar-translate">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a [routerLink]="['/home']" class="nav-link"> Home</a>
+                </li>
+            </ul>
             <button class="navbar-toggler navbar-burger" type="button" data-toggle="collapse"
                 data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false"
                 aria-label="Toggle navigation" (click)="sidebarToggle()">
@@ -18,16 +23,18 @@
                     <a [routerLink]="['/suspects']" class="nav-link"><i class="nc-icon nc-badge"></i> Suspects</a>
                 </li>
                 <li class="nav-item">
-                    <a [routerLink]="['/theories']" class="nav-link"><i class="nc-icon nc-book-bookmark"></i> Theories</a>
+                    <a [routerLink]="['/theories']" class="nav-link"><i class="nc-icon nc-chat-33"></i> Theories</a>
                 </li>
                 <li class="nav-item">
-                    <a [routerLink]="['/timeline']" class="nav-link"><i class="nc-icon nc-chat-33"></i> Timeline</a>
+                    <a [routerLink]="['/timeline']" class="nav-link"><i class="nc-icon nc-chart-bar-32"></i>
+                        Timeline</a>
                 </li>
-                <li class="nav-item" *ngIf="!isHome()">
-                    <a [routerLink]="['/home']" class="nav-link"> Home</a>
+                <li class="nav-item" *ngIf="isTimeline()">
+                    <a [routerLink]="['/add-timeline-event']"><button type="button" class="btn btn-default btn-round">
+                            <i class="nc-icon nc-simple-add"></i> Add Event</button>
+                    </a>
                 </li>
             </ul>
         </div>
     </div>
-
 </nav>
