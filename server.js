@@ -16,7 +16,10 @@ app.use(function (req, res, next) {
   app.use(express.urlencoded({ extended: false }));
   app.use(express.json());
   
-  app.use(express.static(__dirname + "/dist/"));  // Directory for the 'hg build'
+  app.use(express.static(__dirname + "/dist/paper-kit-2-angular"));  // Directory for the 'hg build'
+  app.get('/*', function (req, res) {
+    res.sendFile(path.join(__dirname + '/dist/paper-kit-2-angular/index.html'));
+  });
   //app.use(favicon(__dirname + '/public/favicon.ico'));
   app.use('/api', routes);  // Routes for our API (this is for the frontend conection)
   
