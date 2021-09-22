@@ -14,7 +14,9 @@
                                             <div class="conference-center-line"></div>
                                             <div class="conference-timeline-content">
                                                 <div *ngFor="let event of events">
-
+                                                    
+                                                        <app-date-timeline *ngIf="showDate" [id]="event"></app-date-timeline>
+                                                    
                                                     <app-card-timeline [id]="event"></app-card-timeline>
 
                                                 </div>

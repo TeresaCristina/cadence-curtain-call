@@ -10,15 +10,16 @@ export class CardTimelineComponent implements OnInit {
 
   @Input() id: any = 'n/a';
   event: any = 'n/a';
-  eventId: any = {"id": ''};
+  eventId: any = { "id": '' };
 
-  constructor(private fetch: FetchService) {}
+  constructor(private fetch: FetchService) { }
 
   ngOnInit(): void {
     this.eventId['id'] = this.id;
     this.fetch.getEvent(this.eventId).subscribe(
       data => {
         this.event = data.event;
+        
       }
     )
   }

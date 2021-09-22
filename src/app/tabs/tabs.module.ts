@@ -13,6 +13,7 @@ import { TheoriesComponent } from './theories/theories.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { CardTimelineComponent } from './timeline/card-timeline/card-timeline.component';
 import { AddTimelineEventComponent } from './timeline/add-timeline-event/add-timeline-event.component';
+import { DateTimelineComponent } from './timeline/date-timeline/date-timeline.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { AddTimelineEventComponent } from './timeline/add-timeline-event/add-tim
     TheoriesComponent,
     TimelineComponent,
     CardTimelineComponent,
-    AddTimelineEventComponent]
+    AddTimelineEventComponent,
+    DateTimelineComponent]
 })
 export class TabsModule { }
