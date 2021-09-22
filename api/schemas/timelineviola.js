@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const TimelineViolaSchema = mongoose.Schema({
   event: { type: String },
-  date: { type: String },
+  date: { type: Date },
   time: { type: String },
   details: { type: String }
 });

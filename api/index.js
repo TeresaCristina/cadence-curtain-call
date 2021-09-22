@@ -12,6 +12,7 @@ router.get("/status", function (req, res) {
 });
 
 router.get('/all-events', timelines.allEvents);
+router.post('/event', timelines.getEvent);
 router.post('/new-event', timelines.newEvent);
 
 

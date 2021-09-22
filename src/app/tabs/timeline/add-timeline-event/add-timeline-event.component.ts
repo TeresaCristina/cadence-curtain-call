@@ -26,7 +26,6 @@ export class AddTimelineEventComponent implements OnInit {
     this.newEvent["time"] = this.time;
     this.newEvent["date"] = this.date;
     this.newEvent["event"] = this.event;
-    console.log(this.newEvent)
     this.data.newTimelineEvent(this.newEvent);    
   }
 }

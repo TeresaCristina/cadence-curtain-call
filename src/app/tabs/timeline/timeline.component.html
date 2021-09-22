@@ -7,14 +7,20 @@
                     <div class="nav-tabs-navigation">
                         <div class="nav-tabs-wrapper">
                             <ngb-tabset [justify]="'center'">
-                                <ngb-tab title="Box 1">
+                                <ngb-tab title="Viola's Disappearance">
                                     <ng-template ngbTabContent>
-                                        <app-card-timeline></app-card-timeline>
-                                    </ng-template>
-                                </ngb-tab>
-                                <ngb-tab title="Box 2">
-                                    <ng-template ngbTabContent>
-                                        <p>To be continue....</p>
+                                        <section id="conference-timeline">
+                                            <div class="timeline-start">Start</div>
+                                            <div class="conference-center-line"></div>
+                                            <div class="conference-timeline-content">
+                                                <div *ngFor="let event of events">
+
+                                                    <app-card-timeline [id]="event"></app-card-timeline>
+
+                                                </div>
+                                            </div>
+                                            <div class="timeline-end">End</div>
+                                        </section>
                                     </ng-template>
                                 </ngb-tab>
                             </ngb-tabset>

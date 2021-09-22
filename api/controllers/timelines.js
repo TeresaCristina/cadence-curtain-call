@@ -10,8 +10,22 @@ const allEvents = function (req, res) {
             return res.status(401).json({ message: "There is no events in this timeline!" });
         }
         if (events) {
-            console.log(events[0])
             return res.status(200).json({ events });
+        }
+    })
+}
+
+const getEvent = function (req, res) {
+    const {id} = req.body;
+    TimelineViola.findById(id, function (error, event) {
+        if (error) {
+            return res.status(404).json({ message: "Server error!" });
+        }
+        if (!event) {
+            return res.status(401).json({ message: "There is no events in this timeline!" });
+        }
+        if (event) {
+            return res.status(200).json({ event });
         }
     })
 }
@@ -19,9 +33,9 @@ const allEvents = function (req, res) {
 const newEvent = function (req, res) {
     const { event, date, time, details } = req.body;
    
-    const event = new TimelineViola({event, date, time, details});
+    const addEvent = new TimelineViola({event, date, time, details});
 
-    event.save(function (error) {
+    addEvent.save(function (error) {
         if (error) {
           return res.status(404).json({ message: "Server error!" });
         }
@@ -29,4 +43,4 @@ const newEvent = function (req, res) {
       })
 }
 
-module.exports = {allEvents, newEvent};
+module.exports = {allEvents, newEvent, getEvent};
