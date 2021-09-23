@@ -9,7 +9,7 @@
                             <ngb-tabset [justify]="'center'">
                                 <ngb-tab *ngFor="let suspect of suspects" title={{suspect.name}}>
                                     <ng-template ngbTabContent>
-                                        <app-suspect-template [item]=suspect.id></app-suspect-template>
+                                        <app-suspect-template [id]="suspect.id"></app-suspect-template>
                                     </ng-template>
                                 </ngb-tab>
                             </ngb-tabset>

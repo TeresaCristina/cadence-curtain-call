@@ -28,4 +28,26 @@ export class DataService {
       }
     )
   }
+
+  newSuspect(newSuspect: any) {
+    const api = `${this.endpoint}/add-suspect`;
+    return this.http.post<any>(api, newSuspect).subscribe(
+      (data) => {
+        this.router.navigate(['suspects']);
+      },
+      (error: any) => {
+      }
+    )
+  }
+
+  editTimelineEvent(newValue: any) {
+    const api = `${this.endpoint}/edit-event`;
+    return this.http.post<any>(api, newValue).subscribe(
+      (data) => {
+        this.router.navigate(['timeline']);
+      },
+      (error: any) => {
+      }
+    )
+  }
 }

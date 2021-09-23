@@ -1,4 +1,3 @@
-import { getLocaleMonthNames } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FetchService } from 'services/fetch/fetch.service';
 
@@ -9,44 +8,36 @@ import { FetchService } from 'services/fetch/fetch.service';
 })
 export class TimelineComponent implements OnInit {
 
-  numbEvents: any;
-  events: Array<string> = [];
-  month: any;
-  day: any;
-  previousDay: any = 0;
-  showDate: boolean = false;
-
+  numbEvents: Number;
+  events: Array<any> = [];
+  previousDay: Number = 0;
 
   constructor(private fetch: FetchService) {
     this.fetch.getAllEvents().subscribe(
       data => {
-        this.numbEvents = data.events.length;
-        this.byTimeline(data.events)
+        this.numbEvents = data.events.length;  // quantity of events
+        this.sortDate(data.events)  // sort events by date      
         for (let i = 0; i < this.numbEvents; i++) {
-          this.events.push(data.events[i]._id)
-          this.day = (new Date(data.events[i].date).getDate()) + 1
-          if (this.previousDay != this.day) {
-            console.log(this.previousDay)
-            console.log(this.day)
-            this.previousDay = this.day;
-            this.showDate = true;
-            console.log(this.showDate)
+          const day = (new Date(data.events[i].date).getDate()) + 1
+          if (this.previousDay != day) {
+            this.previousDay = day;
+            const newEvent = {"id": data.events[i]._id, "showDate": true};
+            this.events.push(newEvent);
           } else {
-            this.showDate = false;
+            const newEvent = {"id": data.events[i]._id, "showDate": false};
+            this.events.push(newEvent);
           }
         }
-
       }
     )
   }
 
   ngOnInit(): void { }
 
-  byTimeline(data: any) {
-    data.sort(function (a, b) {
+  sortDate(data: any) {
+    data.sort(function (a: { date: number; time: number; }, b: { date: number; time: number; }) {
       return (a.date < b.date) ? -1 : ((a.date > b.date) ? 1 : 0) || (a.time < b.time) ? -1 : ((a.time > b.time) ? 1 : 0);
     });
-
   }
 
 

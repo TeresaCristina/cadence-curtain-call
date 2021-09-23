@@ -99,8 +99,12 @@
     background: #895e83;
   }
   .meta-date {
-    margin-left: 180px;
-    color: #fff;
+    width: 80px;
+    height: 31px;
+    margin-left: 500px;
+    color: #895e83;
+    border-radius: 10px 10px;
+    background: #ffffff;
   }
   .meta-date .date {
     display: block;

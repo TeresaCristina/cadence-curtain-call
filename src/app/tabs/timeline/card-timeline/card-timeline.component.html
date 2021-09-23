@@ -3,6 +3,9 @@
   <div class="content-left-container">
     <div class="content-left">
       <p>{{event.event}}</p>
+      <p class="settings">
+       <a [routerLink]="['/edit-timeline-event', eventId.id]">edit</a>
+      </p>
     </div>
   </div>
   <div class="meta-time">

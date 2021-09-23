@@ -8,8 +8,8 @@ import { FetchService } from 'services/fetch/fetch.service';
 })
 export class CardTimelineComponent implements OnInit {
 
-  @Input() id: any = 'n/a';
-  event: any = 'n/a';
+  @Input() id: any;
+  event: any = '';
   eventId: any = { "id": '' };
 
   constructor(private fetch: FetchService) { }

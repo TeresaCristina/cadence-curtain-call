@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FetchService } from 'services/fetch/fetch.service';
 
 @Component({
   selector: 'app-suspects',
@@ -7,14 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SuspectsComponent implements OnInit {
 
-  suspects: any[] = [{"id": "1", "name": "Evelyn Kittridge", "occupation": "actress", "photo": "./assets/img/suspects/evelyn.JPG"},
-                     {"id": "2", "name": "Hector Roland", "occupation": "actor", "photo": "./assets/img/suspects/roland.jpg"},
-                     {"id": "3", "name": "Ira Adler", "occupation": "director", "photo": "./assets/img/suspects/ira.jpg"}, 
-                     {"id": "4", "name": "Suspect 4", "occupation": "template"},
-                     {"id": "5", "name": "Suspect 5", "occupation": "template"},
-                    ]
-  currentItem = 'Television';
-  constructor() { }
+  suspects: Array<any> = [];
+  numbSuspects: any;
+
+  constructor(private fetch: FetchService) {
+    this.fetch.getAllSuspects().subscribe(
+      data => {
+        this.numbSuspects = data.suspects.length;  // quantity of suspects
+        for (let i = 0; i < this.numbSuspects; i++) {
+          this.suspects.push(data.suspects[i]._id)
+        }
+      })
+  }
 
   ngOnInit(): void {
   }

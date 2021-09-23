@@ -1,23 +1,23 @@
-const TimelineViola = require('../schemas/timelineviola');
+const Suspects = require('../schemas/suspects');
 
 
-const allEvents = function (req, res) {
-    TimelineViola.find({}, function (error, events) {
+const allSuspects = function (req, res) {
+    Suspects.find({}, function (error, suspects) {
         if (error) {
             return res.status(404).json({ message: "Server error!" });
         }
-        if (!events) {
+        if (!suspects) {
             return res.status(401).json({ message: "There is no events in this timeline!" });
         }
-        if (events) {
-            return res.status(200).json({ events });
+        if (suspects) {
+            return res.status(200).json({ suspects });
         }
     })
 }
 
-const getEvent = function (req, res) {
+const getSuspect = function (req, res) {
     const {id} = req.body;
-    TimelineViola.findById(id, function (error, event) {
+    Suspects.findById(id, function (error, event) {
         if (error) {
             return res.status(404).json({ message: "Server error!" });
         }
@@ -30,38 +30,38 @@ const getEvent = function (req, res) {
     })
 }
 
-const newEvent = function (req, res) {
-    const { event, date, time, details } = req.body;
-    const addEvent = new TimelineViola({event, date, time, details});
-    addEvent.save(function (error) {
+const newSuspect = function (req, res) {
+    const { name, picture, title, details } = req.body;
+    const addSuspect = new Suspects({name, picture, title, details});
+    addSuspect.save(function (error) {
         if (error) {
           return res.status(404).json({ message: "Server error!" });
         }
-        return res.status(200).json({addEvent});
+        return res.status(200).json({addSuspect});
       })
 }
 
-const editEvent = function (req, res) {
+const editSuspect = function (req, res) {
     const {id} = req.body;
     const newValues = {
         $set: {
-            event: req.body.event,
-            date: req.body.date,
-            time: req.body.time,
+            name: req.body.name,
+            picture: req.body.picture,
+            title: req.body.title,
             details: req.body.details,
         }
     };
-    TimelineViola.updateOne({ "_id": id }, newValues, function (error, user) {
+    Suspects.updateOne({ "_id": id }, newValues, function (error, suspect) {
         if (error) {
             return res.status(404).json({ message: "Server error!" });
         }
-        if (!user) {
+        if (!suspect) {
             return res.status(401).json({ message: "This event does not exist!" });
         }
-        if (user) {
+        if (suspect) {
             return res.status(200).json({ id });
         }
     })
 }
 
-module.exports = {allEvents, newEvent, getEvent, editEvent};
+module.exports = {allSuspects, newSuspect, getSuspect, editSuspect};

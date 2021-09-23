@@ -68,4 +68,17 @@ export class NavbarComponent implements OnInit {
             return false;
         }
     }
+
+    isSuspect() {
+        var titlee = this.location.prepareExternalUrl(this.location.path());
+        if(titlee.charAt(0) === '#'){
+            titlee = titlee.slice( 1 );
+        }
+          if( titlee === '/suspects' ) {
+              return true;
+          }
+          else {
+              return false;
+          }
+      }
 }

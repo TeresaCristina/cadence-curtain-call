@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ConectionsComponent } from './conections.component';
+import { EditTimelineEventComponent } from './edit-timeline-event.component';
 
-describe('ConectionsComponent', () => {
-  let component: ConectionsComponent;
-  let fixture: ComponentFixture<ConectionsComponent>;
+describe('EditTimelineEventComponent', () => {
+  let component: EditTimelineEventComponent;
+  let fixture: ComponentFixture<EditTimelineEventComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ConectionsComponent ]
+      declarations: [ EditTimelineEventComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ConectionsComponent);
+    fixture = TestBed.createComponent(EditTimelineEventComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

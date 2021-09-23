@@ -1,36 +1,35 @@
 const express = require('express');
+const path = require('path');
 const cors = require('cors');
 const app = express();
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Headers", "Access-Control-Expose-Headers, Content-Type, Accept");
   next();
-  });
+});
+
+app.use(cors());
+require('./api/database');
+const routes = require('./api/index');
 
 
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
-  app.use(cors());
-  require('./api/database'); 
-  const routes = require('./api/index');  
-  
-  
-  app.use(express.urlencoded({ extended: false }));
-  app.use(express.json());
-  
-  app.use(express.static(__dirname + "/dist/paper-kit-2-angular"));  // Directory for the 'hg build'
-  app.get('/*', function (req, res) {
-    res.sendFile(path.join(__dirname + '/dist/paper-kit-2-angular/index.html'));
-  });
-  //app.use(favicon(__dirname + '/public/favicon.ico'));
-  app.use('/api', routes);  // Routes for our API (this is for the frontend conection)
-  
-  // Initializes the server
-  const PORT = process.env.PORT || 8080 ;
-  const server = app.listen(PORT, function (error) {
-    if (error) throw error;
-    else console.log("Application server now running on port", server.address().port);
-  });
-  
-  module.exports = app;
+app.use(express.static(__dirname + "/dist/paper-kit-2-angular"));  // Directory for the 'hg build'
+//app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use('/api', routes);  // Routes for our API (this is for the frontend conection)
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname + '/dist/paper-kit-2-angular/index.html'));
+});
+
+// Initializes the server
+const PORT = process.env.PORT || 8080;
+const server = app.listen(PORT, function (error) {
+  if (error) throw error;
+  else console.log("Application server now running on port", server.address().port);
+});
+
+module.exports = app;
 
 
 

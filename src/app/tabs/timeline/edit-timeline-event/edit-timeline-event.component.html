@@ -1,0 +1,52 @@
+<div class="wrapper">
+    <div class="page-header page-header-xs" data-parallax="true"></div>
+    <div class="section suspects-content">
+        <div class="owner">
+            <div class="background">
+                <div class="container">
+                    <div class="card">
+                        <div class="card-body">
+                            <form>
+                                <div class="col-md-7">
+                                    <div class="form-group">
+                                        <input type="text" [(ngModel)]="event" name="event" class="form-control" placeholder="Event">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group has-success">
+                                        <input type="date" [(ngModel)]="date" name="date" class="form-control form-control-success"
+                                            id="date">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group has-success">
+                                        <input type="time" [(ngModel)]="time" name="time" class="form-control form-control-success"
+                                            id="time">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group has-success">
+                                        <textarea [(ngModel)]="details" name="details" class="form-control" rows="6"
+                                            placeholder="Details"></textarea>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-12">
+                                    <div class="form-group has-success">
+                                        <a href='#timeline'><button type="button" class="btn btn-danger btn-round">
+                                                Cancel</button>
+                                        </a>
+                                        <a href='#timeline'><button type="submit" (click)="addEvent()"
+                                                class="btn btn-default btn-round">
+                                                <i class="nc-icon nc-simple-add"></i> Add Event</button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

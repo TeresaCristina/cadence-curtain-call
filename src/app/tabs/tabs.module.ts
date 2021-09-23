@@ -8,12 +8,14 @@ import { SuspectsComponent } from './suspects/suspects.component';
 import { SuspectTemplateComponent } from './suspects/suspect-template/suspect-template.component';
 import { PictureComponent } from './suspects/suspect-template/picture/picture.component';
 import { DescriptionComponent } from './suspects/suspect-template/description/description.component';
-import { ConectionsComponent } from './suspects/suspect-template/conections/conections.component';
 import { TheoriesComponent } from './theories/theories.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { CardTimelineComponent } from './timeline/card-timeline/card-timeline.component';
 import { AddTimelineEventComponent } from './timeline/add-timeline-event/add-timeline-event.component';
 import { DateTimelineComponent } from './timeline/date-timeline/date-timeline.component';
+import { EditTimelineEventComponent } from './timeline/edit-timeline-event/edit-timeline-event.component';
+import { RouterModule } from '@angular/router';
+import { AddSuspectComponent } from './suspects/add-suspect/add-suspect.component';
 
 
 @NgModule({
@@ -21,6 +23,7 @@ import { DateTimelineComponent } from './timeline/date-timeline/date-timeline.co
         CommonModule,
         FormsModule,
         NgbModule,
+        RouterModule
     ],
     declarations: [
     EvidencesComponent,
@@ -29,11 +32,12 @@ import { DateTimelineComponent } from './timeline/date-timeline/date-timeline.co
     SuspectTemplateComponent,
     PictureComponent,
     DescriptionComponent,
-    ConectionsComponent,
     TheoriesComponent,
     TimelineComponent,
     CardTimelineComponent,
     AddTimelineEventComponent,
-    DateTimelineComponent]
+    DateTimelineComponent,
+    EditTimelineEventComponent,
+    AddSuspectComponent]
 })
 export class TabsModule { }
