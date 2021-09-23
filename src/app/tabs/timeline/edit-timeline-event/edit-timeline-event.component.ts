@@ -1,3 +1,4 @@
+import { Time } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FetchService } from 'services/fetch/fetch.service';
@@ -10,7 +11,12 @@ import { FetchService } from 'services/fetch/fetch.service';
 export class EditTimelineEventComponent implements OnInit {
 
   id: any = { "id": "" }
-  event: any = {"event": "", "date": "", "time": "", "details": ""}
+  newEvent: any = {"event":"","time": "", "date": "", "details":""}
+  
+  details: String;
+  time: Time;
+  date: Date;
+  event: String;
 
   constructor(private route: ActivatedRoute, private fetch: FetchService) {
     this.route.paramMap.subscribe(params => {
