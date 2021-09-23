@@ -9,7 +9,6 @@ import { TheoriesComponent } from './tabs/theories/theories.component';
 import { HomeComponent } from './home/home.component';
 import { TimelineComponent } from './tabs/timeline/timeline.component';
 import { AddTimelineEventComponent } from './tabs/timeline/add-timeline-event/add-timeline-event.component';
-import { EditTimelineEventComponent } from './tabs/timeline/edit-timeline-event/edit-timeline-event.component';
 import { AddSuspectComponent } from './tabs/suspects/add-suspect/add-suspect.component';
 
 const routes: Routes =[
@@ -20,7 +19,6 @@ const routes: Routes =[
     { path: 'theories',                  component: TheoriesComponent },
     { path: 'timeline',                  component: TimelineComponent },
     { path: 'add-timeline-event',        component: AddTimelineEventComponent },
-    { path: 'edit-timeline-event/:id',   component: EditTimelineEventComponent },
     { path: 'add-suspect',               component: AddSuspectComponent }   
 ];
 

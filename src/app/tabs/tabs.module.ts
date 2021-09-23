@@ -13,7 +13,6 @@ import { TimelineComponent } from './timeline/timeline.component';
 import { CardTimelineComponent } from './timeline/card-timeline/card-timeline.component';
 import { AddTimelineEventComponent } from './timeline/add-timeline-event/add-timeline-event.component';
 import { DateTimelineComponent } from './timeline/date-timeline/date-timeline.component';
-import { EditTimelineEventComponent } from './timeline/edit-timeline-event/edit-timeline-event.component';
 import { RouterModule } from '@angular/router';
 import { AddSuspectComponent } from './suspects/add-suspect/add-suspect.component';
 
@@ -37,7 +36,6 @@ import { AddSuspectComponent } from './suspects/add-suspect/add-suspect.componen
     CardTimelineComponent,
     AddTimelineEventComponent,
     DateTimelineComponent,
-    EditTimelineEventComponent,
     AddSuspectComponent]
 })
 export class TabsModule { }
