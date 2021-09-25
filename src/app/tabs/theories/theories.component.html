@@ -8,10 +8,9 @@
                     <div class="nav-tabs-navigation">
                         <div class="nav-tabs-wrapper">
                             <ngb-tabset [justify]="'center'">
-                                <ngb-tab *ngFor="let box of boxes" title={{box.name}}>
+                                <ngb-tab >
                                     <ng-template ngbTabContent>
-                                        <app-box-template>
-                                            </app-box-template>
+
                                     </ng-template>
                                 </ngb-tab>
                             </ngb-tabset>
