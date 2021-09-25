@@ -14,6 +14,7 @@ import { AddTimelineEventComponent } from './timeline/add-timeline-event/add-tim
 import { DateTimelineComponent } from './timeline/date-timeline/date-timeline.component';
 import { RouterModule } from '@angular/router';
 import { AddSuspectComponent } from './suspects/add-suspect/add-suspect.component';
+import { EditTimelineComponent } from './timeline/edit-timeline/edit-timeline.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { AddSuspectComponent } from './suspects/add-suspect/add-suspect.componen
     CardTimelineComponent,
     AddTimelineEventComponent,
     DateTimelineComponent,
-    AddSuspectComponent]
+    AddSuspectComponent,
+    EditTimelineComponent]
 })
 export class TabsModule { }

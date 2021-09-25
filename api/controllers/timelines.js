@@ -42,7 +42,7 @@ const newEvent = function (req, res) {
 }
 
 const editEvent = function (req, res) {
-    const {id} = req.body;
+    const id = req.params.id;
     const newValues = {
         $set: {
             event: req.body.event,
@@ -51,17 +51,34 @@ const editEvent = function (req, res) {
             details: req.body.details,
         }
     };
-    TimelineViola.updateOne({ "_id": id }, newValues, function (error, user) {
+    TimelineViola.updateOne({ "_id" : id }, newValues, function (error, event) {
         if (error) {
             return res.status(404).json({ message: "Server error!" });
         }
-        if (!user) {
+        if (!event) {
             return res.status(401).json({ message: "This event does not exist!" });
         }
-        if (user) {
-            return res.status(200).json({ id });
+        if (event) {
+            return res.status(200).json({ event });
         }
     })
 }
 
-module.exports = {allEvents, newEvent, getEvent, editEvent};
+const deleteEvent = function (req, res) {
+    const id = req.params.id;
+    console.log(id)
+    TimelineViola.deleteOne({ "_id": id }, function (error, event) {
+        if (error) {
+            return res.status(404).json({ message: "Server error!" });
+        }
+        if (!event) {
+            return res.status(401).json({ message: "This safety measure does not exist!" });
+        }
+        if (event) {
+            return res.status(200).json(event);
+        }
+    })
+}
+
+
+module.exports = {allEvents, newEvent, getEvent, editEvent, deleteEvent};

@@ -3,9 +3,14 @@
   <div class="content-left-container">
     <div class="content-left">
       <p>{{event.event}}</p>
-      <p class="settings">
-       <a [routerLink]="['/edit-timeline-event', eventId.id]">edit</a>
-      </p>
+ 
+        <p>
+          <a [routerLink]="['/edit-timeline', event._id]" class="setting"><i class="nc-icon nc-simple-remove"></i>
+            Edit     </a>
+          <a [routerLink]="['/timeline']" class="settings" (click)="deleteEvent()"><i
+              class="nc-icon nc-simple-remove"></i> Delete</a>
+        </p>
+   
     </div>
   </div>
   <div class="meta-time">

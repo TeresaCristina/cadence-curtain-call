@@ -10,7 +10,7 @@
                             <ngb-tabset [justify]="'center'">
                                 <ngb-tab *ngFor="let box of boxes" title={{box.name}}>
                                     <ng-template ngbTabContent>
-                                        <app-box-template [id]="box.id">
+                                        <app-box-template>
                                             </app-box-template>
                                     </ng-template>
                                 </ngb-tab>

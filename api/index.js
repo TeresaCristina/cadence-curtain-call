@@ -5,7 +5,7 @@ const express = require('express');
 const router = express.Router();
 const timelines = require('./controllers/timelines');
 const suspects = require('./controllers/suspects');
-const evidences = require('./controllers/evidencese');
+const evidences = require('./controllers/evidences');
 
 
 // Server Status
@@ -16,7 +16,8 @@ router.get("/status", function (req, res) {
 router.get('/all-events', timelines.allEvents);
 router.post('/event', timelines.getEvent);
 router.post('/new-event', timelines.newEvent);
-router.post('/edit-event', timelines.editEvent);
+router.put('/edit-event/:id', timelines.editEvent);
+router.delete('/delete-event/:id', timelines.deleteEvent)
 
 router.get('/all-suspects', suspects.allSuspects);
 router.post('/suspect', suspects.getSuspect);

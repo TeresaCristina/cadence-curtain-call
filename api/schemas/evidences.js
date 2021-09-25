@@ -5,4 +5,4 @@ const EvidenceSchema = mongoose.Schema({
   details: { type: String }
 });
 
-module.exports = mongoose.model('Evidence', SuspectSchema, 'evidence');
+module.exports = mongoose.model('Evidence', EvidenceSchema, 'evidence');

@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { TimelineComponent } from './tabs/timeline/timeline.component';
 import { AddTimelineEventComponent } from './tabs/timeline/add-timeline-event/add-timeline-event.component';
 import { AddSuspectComponent } from './tabs/suspects/add-suspect/add-suspect.component';
+import { EditTimelineComponent } from './tabs/timeline/edit-timeline/edit-timeline.component';
 
 const routes: Routes =[
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -19,7 +20,8 @@ const routes: Routes =[
     { path: 'theories',                  component: TheoriesComponent },
     { path: 'timeline',                  component: TimelineComponent },
     { path: 'add-timeline-event',        component: AddTimelineEventComponent },
-    { path: 'add-suspect',               component: AddSuspectComponent }   
+    { path: 'add-suspect',               component: AddSuspectComponent } ,
+    { path: 'edit-timeline/:id',             component: EditTimelineComponent }   
 ];
 
 @NgModule({

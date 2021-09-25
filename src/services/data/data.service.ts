@@ -44,13 +44,13 @@ export class DataService {
     )
   }
 
-  editTimelineEvent(newValue: any) {
-    const api = `${this.endpoint}/edit-event`;
-    return this.http.post<any>(api, newValue).subscribe(
+  editTimelineEvent(newValue: any, id: any) {
+    const api = `${this.endpoint}/edit-event/${id}`;
+    return this.http.put<any>(api, newValue).subscribe(
       (data) => {
         this.router.navigate(['timeline']).then(() => {
           window.location.reload();
-        });
+        })
       },
       (error: any) => {
       }
@@ -64,6 +64,22 @@ export class DataService {
         map(
           (data) => {
             this.router.navigate(['suspects']).then(() => {
+              window.location.reload();
+            });
+          },
+          (error: any) => {
+          }
+        )
+      )
+  }
+
+  deleteEvent(id: any) {
+    const api = `${this.endpoint}/delete-event/${id}`;
+    return this.http.delete<any>(api)
+      .pipe(
+        map(
+          (data) => {
+            this.router.navigate(['timeline']).then(() => {
               window.location.reload();
             });
           },
