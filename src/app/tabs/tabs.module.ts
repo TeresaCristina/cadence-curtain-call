@@ -15,6 +15,7 @@ import { DateTimelineComponent } from './timeline/date-timeline/date-timeline.co
 import { RouterModule } from '@angular/router';
 import { AddSuspectComponent } from './suspects/add-suspect/add-suspect.component';
 import { EditTimelineComponent } from './timeline/edit-timeline/edit-timeline.component';
+import { ModalTimelineComponent } from './timeline/modal-timeline/modal-timeline.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { EditTimelineComponent } from './timeline/edit-timeline/edit-timeline.co
     AddTimelineEventComponent,
     DateTimelineComponent,
     AddSuspectComponent,
-    EditTimelineComponent]
+    EditTimelineComponent,
+    ModalTimelineComponent]
 })
 export class TabsModule { }
