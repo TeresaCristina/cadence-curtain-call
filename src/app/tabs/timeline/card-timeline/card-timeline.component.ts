@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { DataService } from 'services/data/data.service';
 import { FetchService } from 'services/fetch/fetch.service';
 
@@ -13,7 +14,7 @@ export class CardTimelineComponent implements OnInit {
   event: any = '';
   eventId: any = { "id": '' };
 
-  constructor(private fetch: FetchService, private data: DataService) { }
+  constructor(private fetch: FetchService, private data: DataService, private modalService: NgbModal) { }
 
   ngOnInit(): void {
     this.eventId['id'] = this.id;
@@ -30,5 +31,14 @@ export class CardTimelineComponent implements OnInit {
       })
   }
 
+  open() {
+    const modalRef = this.modalService.open(NgbdModalContent);
+    modalRef.componentInstance.name = 'World';
+}
+
 
 }
+function NgbdModalContent(NgbdModalContent: any) {
+  throw new Error('Function not implemented.');
+}
+

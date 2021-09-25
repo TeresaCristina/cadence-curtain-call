@@ -3,16 +3,14 @@
   <div class="content-left-container">
     <div class="content-left">
       <p>{{event.event}}</p>
- 
-        <p>
-          <a [routerLink]="['/edit-timeline', event._id]" class="setting"><i class="nc-icon nc-simple-remove"></i>
-            Edit     </a>
-          <a [routerLink]="['/timeline']" class="settings" (click)="deleteEvent()"><i
-              class="nc-icon nc-simple-remove"></i> Delete</a>
-        </p>
-   
+      <div class="settings">
+        <button class="btn btn-outline-default btn-round btn-sm settings" [routerLink]="['/edit-timeline', event._id]">edit</button>
+      <button class="btn btn-outline-danger btn-round btn-sm settings" (click)="deleteEvent()">delete</button>
+      <app-modal-timeline [myEvent]="event"></app-modal-timeline>
+    </div>
     </div>
   </div>
+  
   <div class="meta-time">
     <span class="time">{{event.time}}</span>
   </div>
