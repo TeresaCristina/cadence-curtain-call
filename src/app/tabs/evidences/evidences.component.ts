@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EvidencesComponent implements OnInit {
 
+  boxes = ["Box 1", "Box 2"]
   constructor() { }
 
   ngOnInit(): void {

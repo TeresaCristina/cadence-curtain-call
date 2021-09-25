@@ -16,33 +16,35 @@ const allSuspects = function (req, res) {
 }
 
 const getSuspect = function (req, res) {
-    const {id} = req.body;
-    Suspects.findById(id, function (error, event) {
+    const { id } = req.body;
+    Suspects.findById(id, function (error, suspect) {
         if (error) {
             return res.status(404).json({ message: "Server error!" });
         }
-        if (!event) {
+        if (!suspect) {
             return res.status(401).json({ message: "There is no events in this timeline!" });
         }
-        if (event) {
-            return res.status(200).json({ event });
+        if (suspect) {
+            return res.status(200).json({ suspect });
         }
     })
 }
 
 const newSuspect = function (req, res) {
     const { name, picture, title, details } = req.body;
-    const addSuspect = new Suspects({name, picture, title, details});
+    console.log(req.body)
+    const addSuspect = new Suspects({ name, picture, title, details });
     addSuspect.save(function (error) {
         if (error) {
-          return res.status(404).json({ message: "Server error!" });
+            return res.status(404).json({ message: "Server error!" });
         }
-        return res.status(200).json({addSuspect});
-      })
+        return res.status(200).json({ addSuspect });
+    })
 }
 
 const editSuspect = function (req, res) {
-    const {id} = req.body;
+    const { id } = req.body;
+
     const newValues = {
         $set: {
             name: req.body.name,
@@ -64,4 +66,20 @@ const editSuspect = function (req, res) {
     })
 }
 
-module.exports = {allSuspects, newSuspect, getSuspect, editSuspect};
+const deleteSuspect = function (req, res) {
+    const id = req.params.id;
+    console.log(id)
+    Suspects.deleteOne({ "_id": id }, function (error, suspect) {
+        if (error) {
+            return res.status(404).json({ message: "Server error!" });
+        }
+        if (!suspect) {
+            return res.status(401).json({ message: "This safety measure does not exist!" });
+        }
+        if (suspect) {
+            return res.status(200).json(suspect);
+        }
+    })
+}
+
+module.exports = { allSuspects, newSuspect, getSuspect, editSuspect, deleteSuspect };

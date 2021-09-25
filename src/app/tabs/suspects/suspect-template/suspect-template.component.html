@@ -2,10 +2,18 @@
     <div class="card-body">
         <div class="row">
             <div class="col-sm-6 col-lg-3">
-                <app-picture [photo]="id"></app-picture>
+                <div class="owner">
+                    <app-picture [id]="suspectId.id"></app-picture>
+                    <div class="name">
+                        <h4 class="title">{{name}}<br /></h4>
+                        <h6 class="description">{{title}}</h6>
+                    </div>
+                </div>
             </div>
-            <div class="col-sm-6 col-lg-8">
-                <app-description></app-description>
+            <div class="col-sm-6 col-lg-8 details">
+                <p>{{details}}</p>
+                <a [routerLink]="['/suspects']" class="nav-link" (click)="deleteSuspect()"><i
+                        class="nc-icon nc-simple-remove"></i> Delete</a>
             </div>
         </div>
     </div>

@@ -16,7 +16,8 @@ export class SuspectsComponent implements OnInit {
       data => {
         this.numbSuspects = data.suspects.length;  // quantity of suspects
         for (let i = 0; i < this.numbSuspects; i++) {
-          this.suspects.push(data.suspects[i]._id)
+          const newSuspect = {"id": data.suspects[i]._id, "name": data.suspects[i].name};
+          this.suspects.push(newSuspect);
         }
       })
   }

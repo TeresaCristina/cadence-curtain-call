@@ -63,7 +63,20 @@ export class FetchService {
       )
   }
 
-
+  getSuspect(id: any) {
+    const api = `${this.endpoint}/suspect`;
+    return this.http.post<any>(api, id)
+      .pipe(
+        map(
+          data => {
+            return data;
+          },
+          (error: any) => {
+            window.alert("This event does not exist.");
+          }
+        )
+      )
+  }
 
 
 }

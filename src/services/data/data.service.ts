@@ -10,7 +10,7 @@ export class DataService {
 
   endpoint: string = 'http://localhost:8080/api';
 
-  headers  = new HttpHeaders({
+  headers = new HttpHeaders({
     'Content-Type': 'application/json',
     'Accept': 'application/json',
     'Access-Control-Allow-Headers': 'Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization'
@@ -22,7 +22,9 @@ export class DataService {
     const api = `${this.endpoint}/new-event`;
     return this.http.post<any>(api, newEvent).subscribe(
       (data) => {
-        this.router.navigate(['timeline']);
+        this.router.navigate(['timeline']).then(() => {
+          window.location.reload();
+        });
       },
       (error: any) => {
       }
@@ -33,7 +35,9 @@ export class DataService {
     const api = `${this.endpoint}/add-suspect`;
     return this.http.post<any>(api, newSuspect).subscribe(
       (data) => {
-        this.router.navigate(['suspects']);
+        this.router.navigate(['suspects']).then(() => {
+          window.location.reload();
+        });
       },
       (error: any) => {
       }
@@ -44,10 +48,31 @@ export class DataService {
     const api = `${this.endpoint}/edit-event`;
     return this.http.post<any>(api, newValue).subscribe(
       (data) => {
-        this.router.navigate(['timeline']);
+        this.router.navigate(['timeline']).then(() => {
+          window.location.reload();
+        });
       },
       (error: any) => {
       }
     )
   }
+
+  deleteSuspect(id: any) {
+    const api = `${this.endpoint}/delete-suspect/${id}`;
+    return this.http.delete<any>(api)
+      .pipe(
+        map(
+          (data) => {
+            this.router.navigate(['suspects']).then(() => {
+              window.location.reload();
+            });
+          },
+          (error: any) => {
+          }
+        )
+      )
+  }
+
+
+
 }

@@ -7,7 +7,6 @@ import { BoxTemplateComponent } from './evidences/box-template/box-template.comp
 import { SuspectsComponent } from './suspects/suspects.component';
 import { SuspectTemplateComponent } from './suspects/suspect-template/suspect-template.component';
 import { PictureComponent } from './suspects/suspect-template/picture/picture.component';
-import { DescriptionComponent } from './suspects/suspect-template/description/description.component';
 import { TheoriesComponent } from './theories/theories.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { CardTimelineComponent } from './timeline/card-timeline/card-timeline.component';
@@ -30,7 +29,6 @@ import { AddSuspectComponent } from './suspects/add-suspect/add-suspect.componen
     SuspectsComponent,
     SuspectTemplateComponent,
     PictureComponent,
-    DescriptionComponent,
     TheoriesComponent,
     TimelineComponent,
     CardTimelineComponent,

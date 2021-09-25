@@ -9,12 +9,29 @@
                             <form>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="text" [(ngModel)]="name" name="name" class="form-control" placeholder="Name">
+                                        <input type="text" [(ngModel)]="name" name="name" class="form-control"
+                                            placeholder="Name">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="text" [(ngModel)]="title" name="title" class="form-control" placeholder="Title">
+                                        <input type="text" [(ngModel)]="title" name="title" class="form-control"
+                                            placeholder="Title">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group has-success">
+                                        <input type="file" [(ngModel)]="file" name="file" class="form-control"
+                                            placeholder="Upload" (change)="onChange($event)">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group has-success">
+
+                                        <button type="submit" (click)="onUpload()"
+                                            class="btn btn-success btn-round inner">
+                                            Upload
+                                        </button>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
@@ -23,12 +40,27 @@
                                             placeholder="Details"></textarea>
                                     </div>
                                 </div>
+
+
+
+
+
+                                <!-- Shareable short link of  uoloaded file -->
+                                <div class="container text-center jumbotron" *ngIf="shortLink">
+                                    <h2> Visit Here</h2>
+                                    <a href="{{shortLink}}">{{shortLink}}</a>
+                                </div>
+
+                                <!--Flag variable is used here-->
+                                <div class="container" *ngIf="loading">
+                                    <h3>Loading ...</h3>
+                                </div>
                                 <div class="col-md-12">
                                     <div class="form-group has-success">
                                         <a href='#suspects'><button type="button" class="btn btn-danger btn-round">
                                                 Cancel</button>
                                         </a>
-                                        <a href='#timeline'><button type="submit" (click)="addEvent()"
+                                        <a href='#timeline'><button type="submit" (click)="addSuspect()"
                                                 class="btn btn-default btn-round">
                                                 <i class="nc-icon nc-simple-add"></i> Add Suspect</button>
                                         </a>
