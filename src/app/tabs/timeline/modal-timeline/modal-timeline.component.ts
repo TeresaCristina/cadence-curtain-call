@@ -18,7 +18,7 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 
 export class NgbdModalContent {
-  @Input() title: any;
+  @Input() event: any;
   @Input() details: any;
 
   constructor(public activeModal: NgbActiveModal) {
@@ -40,7 +40,6 @@ export class ModalTimelineComponent implements OnInit {
   ngOnInit(): void {
   }
   open() {
-    console.log(this.myEvent)
     const modalRef = this.modalService.open(NgbdModalContent);
     modalRef.componentInstance.event = this.myEvent.event;
     modalRef.componentInstance.details = this.myEvent.details;

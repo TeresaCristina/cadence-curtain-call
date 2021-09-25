@@ -32,7 +32,6 @@ const getSuspect = function (req, res) {
 
 const newSuspect = function (req, res) {
     const { name, picture, title, details } = req.body;
-    console.log(req.body)
     const addSuspect = new Suspects({ name, picture, title, details });
     addSuspect.save(function (error) {
         if (error) {
@@ -68,7 +67,6 @@ const editSuspect = function (req, res) {
 
 const deleteSuspect = function (req, res) {
     const id = req.params.id;
-    console.log(id)
     Suspects.deleteOne({ "_id": id }, function (error, suspect) {
         if (error) {
             return res.status(404).json({ message: "Server error!" });

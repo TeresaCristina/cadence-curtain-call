@@ -66,7 +66,6 @@ const editEvent = function (req, res) {
 
 const deleteEvent = function (req, res) {
     const id = req.params.id;
-    console.log(id)
     TimelineViola.deleteOne({ "_id": id }, function (error, event) {
         if (error) {
             return res.status(404).json({ message: "Server error!" });
